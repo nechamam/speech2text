@@ -4,7 +4,11 @@
   "description": "Examples of using the IBM Watson Developer Cloud Node.js SDK",
   "private": true,
   "license": "Apache-2.0",
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
+    "express": "^4.17.1",
     "ibm-watson": "latest",
     "wav": "^1.0.1"
   },

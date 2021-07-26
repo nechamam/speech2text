@@ -1,8 +1,9 @@
 'use strict';
+const { IamAuthenticator } = require('ibm-watson/auth');
 const SpeechToTextV1 = require('ibm-watson/speech-to-text/v1');
 const fs = require('fs');
 
-module.exports = () => {
+module.exports =  async (req, res) => {
 
 
 const speechToText = new SpeechToTextV1({
@@ -44,6 +45,7 @@ recognizeStream.setEncoding('utf8');
 */
 
 recognizeStream.on('data', function (event) {
+  res.json(event);
   onEvent('Data:', event);
 });
 recognizeStream.on('error', function (event) {
